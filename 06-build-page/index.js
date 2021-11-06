@@ -24,21 +24,21 @@ fileSystem.readFile(index, 'utf8', (error, data) => {
                 console.log(error);
             }
         });
-    });
-    fileSystem.readFile('06-build-page/components/articles.html', 'utf8', (error, data2) => {
-        data = data.replace('{{articles}}', data2);
-        fileSystem.writeFile(index, data, 'utf8', error => {
-            if (error) {
-                console.log(error);
-            }
-        });
-    });
-    fileSystem.readFile('06-build-page/components/footer.html', 'utf8', (error, data3) => {
-        data = data.replace('{{footer}}', data3);
-        fileSystem.writeFile(index, data, 'utf8', error => {
-            if (error) {
-                console.log(error);
-            }
+        fileSystem.readFile('06-build-page/components/articles.html', 'utf8', (error, data2) => {
+            data = data.replace('{{articles}}', data2);
+            fileSystem.writeFile(index, data, 'utf8', error => {
+                if (error) {
+                    console.log(error);
+                }
+            });
+            fileSystem.readFile('06-build-page/components/footer.html', 'utf8', (error, data3) => {
+                data = data.replace('{{footer}}', data3);
+                fileSystem.writeFile(index, data, 'utf8', error => {
+                    if (error) {
+                        console.log(error);
+                    }
+                });
+            });
         });
     });
 });
