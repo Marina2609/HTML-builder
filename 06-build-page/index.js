@@ -10,6 +10,12 @@ const sourceFonts = path.join(__dirname, 'assets/fonts');
 const sourceImage = path.join(__dirname, 'assets/img');
 const sourceSvg = path.join(__dirname, 'assets/svg');
 
+fileSystem.mkdir('06-build-page/project-dist', {recursive: true}, error => {
+    if (error) {
+        console.log(error);
+    }
+});
+  
 //Заменяет шаблонные теги
 fileSystem.createReadStream('06-build-page/template.html', 'utf8').pipe(fileSystem.createWriteStream('06-build-page/project-dist/index.html'));
 
