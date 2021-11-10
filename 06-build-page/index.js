@@ -20,7 +20,6 @@ fileSystem.mkdir('06-build-page/project-dist', {recursive: true}, error => {
 //Заменяет шаблонные теги
 
 setTimeout(function () {
-<<<<<<< HEAD
     const inp = fileSystem.createReadStream(path.join(__dirname, 'template.html'), 'utf-8');
     const out = fileSystem.createWriteStream(path.join(__dirname, 'project-dist/index.html'));
     
@@ -62,38 +61,6 @@ setTimeout(function () {
         );
     });
     
-=======
-    fileSystem.readFile(index, 'utf8', (error, data) => {
-        if (error) {
-            console.log(error);
-        }
-        fileSystem.readFile('06-build-page/components/header.html', 'utf8', (error, data1) => {
-            data = data.replace('{{header}}', data1);
-            fileSystem.writeFile(index, data, 'utf8', error => {
-                if (error) {
-                    console.log(error);
-                }
-            });
-            fileSystem.readFile('06-build-page/components/articles.html', 'utf8', (error, data2) => {
-                data = data.replace('{{articles}}', data2);
-                fileSystem.writeFile(index, data, 'utf8', error => {
-                    if (error) {
-                        console.log(error);
-                    }
-                });
-                fileSystem.readFile('06-build-page/components/footer.html', 'utf8', (error, data3) => {
-                    data = data.replace('{{footer}}', data3);
-                    fileSystem.writeFile(index, data, 'utf8', error => {
-                        if (error) {
-                            console.log(error);
-                        }
-                    });
-                });
-            });
-        });
-    });
-
->>>>>>> ea743630e79261474e84d727b278ba51c9a8784e
     //Собирает в единый файл стили из папки styles
     fileSystem.writeFile(styles, '', error => {
         if (error) {
