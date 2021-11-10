@@ -17,7 +17,7 @@ fileSystem.writeFile('02-write-file/text.txt', '', error => {
 rl.on('line', name => {
     console.log("What is your name? ");
     if (name === 'exit') {
-        console.log(`Goodbye, ${name}.`);
+        console.log(`Goodbye.`);
         process.exit(0);
     }
 
